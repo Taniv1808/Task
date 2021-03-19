@@ -1,6 +1,7 @@
 import React from 'react';
-import {Login, OtpVerification} from '../Screens';
+import {OtpVerification,Login} from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
+
 
 
 export default function (Stack) {

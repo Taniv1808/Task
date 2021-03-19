@@ -3,8 +3,6 @@ import React from 'react';
 import {Home, Detail} from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
 
-
-
 export default function (Stack) {
   return (
     <>

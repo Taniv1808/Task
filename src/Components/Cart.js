@@ -3,7 +3,6 @@ import {View,Text,Image, TextInput, ScrollView, FlatList, TouchableOpacity, Dime
 import navigationStrings from '../constants/navigationStrings'
 import {useNavigation} from '@react-navigation/native'
 
-
 export default function  Cart(props) {
   const navigation=useNavigation()
   const{data,onAdd}=props
@@ -14,8 +13,8 @@ export default function  Cart(props) {
     </TouchableOpacity>
     <Text style={{marginLeft:45,fontSize:20}}>Rs.{data.price}</Text>
     <Text style={{marginLeft:50,fontSize:18}}>Tommy</Text>
-    <TouchableOpacity onPress={()=>{onAdd(data)}}>
-      <Text style={{marginLeft:45,borderWidth:0.4,padding:5,textAlign:'center',width:60,backgroundColor:'#dcdcdc'}}>
+    <TouchableOpacity>
+      <Text style={{marginLeft:45,borderWidth:0.4,padding:5,textAlign:'center',width:60,backgroundColor:'#dcdcdc',marginTop:4}}>
       Add
       </Text>
     </TouchableOpacity>

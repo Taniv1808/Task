@@ -1,6 +1,7 @@
 import { LOGIN_API } from '../config/urls'
 import Login from '../Screens/Login/Login'
-import { apiDelete, apiGet, apiPost, apiPut } from '../utils/utils'
+import { apiGet} from '../utils/utils'
+Login
 
 export function  getUserProfile(query) {
     return  apiGet(LOGIN_API+query)

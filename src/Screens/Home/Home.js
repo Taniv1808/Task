@@ -20,10 +20,9 @@ export default class Home extends Component{
     img:'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/2104/9881/New-Autumn-Fashion-Brand-Men-Clothes-Slim-Fit-Men-Long-Sleeve-Shirt-Men-Plaid-Cotton-Casual__15044.1569933891.jpg?c=2',
     price:'700',
     iterator: 1,
-      counter: 0,
-      emptyArray: [],
-}]
-            
+    counter: 0,
+    emptyArray: [],
+}]           
     }
 }
 addCart = (item) => {
@@ -33,7 +32,6 @@ addCart = (item) => {
     if (!(index == -1)) {
       alert('Already added')
       this.setState({
-
       });
     }else{
     this.setState({
@@ -43,10 +41,10 @@ addCart = (item) => {
   };
     render(){
         const{img}=this.state
-        let {counter,emptyArray}=this.state
+        let {counter}=this.state
         return(
             <View>
-            <Decathlon/>
+            <Decathlon onCounter={counter}/>
             <ScrollView>
                 <Carousel/>
                 <Hoarding/>
@@ -60,9 +58,10 @@ addCart = (item) => {
               <View style={{ marginBottom: 10 }}></View>
             )}
             renderItem={({ item }) => (
-              <Cart data={item} onAdd={this.addToCart}></Cart>
+              <Cart data={item} 
+              onAdd={this.addCart}>  
+              </Cart>
             )}
-            onAdd={this.addCart}
           />
             </ScrollView>
             </View>

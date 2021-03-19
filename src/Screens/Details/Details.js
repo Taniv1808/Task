@@ -123,7 +123,7 @@ const styles=StyleSheet.create({
     arrow1:{ 
       width: 30, 
       height: 30, 
-      marginTop: 50, 
+      marginTop: 10, 
       marginLeft: 30
      },
     search1:{ 

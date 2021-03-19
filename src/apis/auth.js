@@ -1,7 +1,6 @@
 import { LOGIN} from '../config/urls'
-import { apiDelete, apiGet, apiPost, apiPut } from '../utils/utils'
+import {  apiPost} from '../utils/utils'
 
-
-export function  Login(data={}) {
+export function Login(data={}) {
     return apiPost(LOGIN,data)
 }

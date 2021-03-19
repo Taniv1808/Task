@@ -6,6 +6,7 @@ import strings from '../../constants/lang';
 import styles from './styles';
 import navigationStrings from '../../constants/navigationStrings';
 import validation from '../../utils/validation';
+import apis from '../../apis';
 
 export default function OtpVerification({navigation}) {
   const onLogin = () => {
@@ -18,16 +19,14 @@ export default function OtpVerification({navigation}) {
         showsVerticalScrollIndicator={false}
         style={{
           flex: 1,
-
           marginHorizontal: 24,
         }}>
         <View style={{height: 48}} />
         <Text style={styles.header}>LOGIN YOUR ACCOUNT</Text>
         <Text style={styles.txtSmall}>ENTER REGISTERED EMAIL</Text>
         <View style={{height: 50}} />
-        <TextInput placeholder={strings.YOUR_EMAIL} style={{borderWidth:0.2,marginTop:10}} />
-        <TextInput placeholder={strings.ENTER_PASSWORD} style={{borderWidth:0.2,marginTop:10}}/>
-
+        <TextInput placeholder='YOUR NAME' style={{borderWidth:0.2,marginTop:10}} />
+        <TextInput placeholder='ENTER PASSWORD' style={{borderWidth:0.2,marginTop:10}}/>
         <TextInput placeholder="Enter your email"style={{borderWidth:0.2,marginTop:10}} />
 
         <Button
