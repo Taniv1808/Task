@@ -1,7 +1,8 @@
 import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Home} from '../Screens';
+import {Home, Detail} from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
+
 
 
 export default function (Stack) {
@@ -12,6 +13,12 @@ export default function (Stack) {
         component={Home}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={navigationStrings.DETAIL}
+        component={Detail}
+        options={{headerShown: false}}
+      />
+  
 
     </>
   );

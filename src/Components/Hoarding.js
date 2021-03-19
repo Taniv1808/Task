@@ -21,7 +21,7 @@ export default function Carousel(props) {
           style={styles.carouselImages}
           source={{
             uri:
-              "https://www.shopickr.com/wp-content/uploads/2016/02/snapdeal-decathlon-sports-clearance-sale-2016.jpg",
+              "https://image.shutterstock.com/image-photo/female-running-athlete-woman-trail-260nw-144741580.jpg",
           }}
         ></Image>
       </View>
@@ -71,7 +71,7 @@ export default function Carousel(props) {
           style={styles.carouselImages}
           source={{
             uri:
-            "https://www.shopickr.com/wp-content/uploads/2016/02/snapdeal-decathlon-sports-clearance-sale-2016.jpg",
+            "https://image.shutterstock.com/image-photo/female-running-athlete-woman-trail-260nw-144741580.jpg",
           }}
         ></Image>
       </View>

@@ -5,7 +5,7 @@ imagePath
 
 export default function Decathlon(props){
     return(
-        <View style={{marginTop:20}}>
+        <View style={{marginTop:20,marginBottom:10}}>
                 <View style={{flexDirection:'row'}}></View>
                 <Image source={imagePath.map} style={{width:40,height:50,marginLeft:10}}/>
                 <Text style={{marginTop:-40,marginLeft:50}}>Delivering to 560001</Text>

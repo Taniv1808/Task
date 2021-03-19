@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image,TextInput} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import BorderTextInput from '../../Components/BorderTextInput';
 import ButtonWithLoader from '../../Components/ButtonWithLoader';
@@ -36,20 +36,6 @@ export default function OtpVerification({navigation}) {
   const {timer} = state;
   return (
     <WrapperContainer>
-      <View
-        style={{
-          height: moderateScaleVertical(80),
-          borderBottomColor: colors.borderLight,
-          paddingHorizontal: moderateScale(24),
-          justifyContent: 'center',
-          borderBottomWidth: 2,
-        }}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack(null)}
-          style={{alignSelf: 'flex-start'}}>
-          <Image source={imagePath.back} />
-        </TouchableOpacity>
-      </View>
       <KeyboardAwareScrollView
         showsVerticalScrollIndicator={false}
         style={{
@@ -61,10 +47,10 @@ export default function OtpVerification({navigation}) {
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
         <View style={{height: moderateScaleVertical(50)}} />
-        <BorderTextInput placeholder={strings.YOUR_EMAIL} />
-        <BorderTextInput placeholder={strings.ENTER_PASSWORD} />
+        <TextInput placeholder={strings.YOUR_EMAIL} style={{borderWidth:0.2,marginTop:10}} />
+        <TextInput placeholder={strings.ENTER_PASSWORD} style={{borderWidth:0.2,marginTop:10}}/>
 
-        <TextInputWithLabel label="Email" placeholder="Enter your email" />
+        <TextInput placeholder="Enter your email"style={{borderWidth:0.2,marginTop:10}} />
 
         <GradientButton
           containerStyle={{marginTop: moderateScaleVertical(10)}}
@@ -76,20 +62,6 @@ export default function OtpVerification({navigation}) {
             <View style={styles.hyphen} />
             <Text style={styles.orText}>{strings.OR_LOGIN_WITH}</Text>
             <View style={styles.hyphen} />
-          </View>
-          <View style={styles.socialRowBtn}>
-            <TouchableOpacity>
-              <Image source={imagePath.google} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={imagePath.fb} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={imagePath.insta} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={imagePath.apple} />
-            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.bottomContainer}>

@@ -10,6 +10,7 @@ export default {
   map:require('../assets/images/map.png'),
   search:require('../assets/images/search.png'),
   logo:require('../assets/images/logo.png'),
-  cart:require('../assets/images/cart.png')
+  cart:require('../assets/images/cart.png'),
+  arrow:require('../assets/images/arrow.png')
 
 };

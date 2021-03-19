@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, TextInput} from 'react-native';
 import WrapperContainer from '../../Components/WrapperContainer';
 import strings from '../../constants/lang';
-import commonStyles from '../../styles/commonStyles';
 import {
   moderateScale,
   moderateScaleVertical,
@@ -25,11 +24,6 @@ export default function Signup({navigation}) {
   });
   const updateState = (data) => setState((state) => ({...state, ...data}));
 
-  const _onCountryChange = (data) => {
-    updateState({cca2: data.cca2, callingCode: data.callingCode[0]});
-    return;
-  };
-
   const moveToNewScreen = (screenName, data) => () => {
     navigation.navigate(screenName, {});
   };
@@ -43,7 +37,7 @@ export default function Signup({navigation}) {
     updateState({[key]: val});
   };
 
-  const {phoneNumber, callingCode, cca2, name, email, password} = state;
+  const {phoneNumber, name, email, password} = state;
   return (
     <WrapperContainer>
       <View style={{flex: 1}}>
@@ -81,7 +75,6 @@ export default function Signup({navigation}) {
             marginTop={moderateScaleVertical(10)}
             btnText={strings.SIGNUP_AN_ACCOUNT}
           />
-          {/* <PhoneNumberInput /> */}
         </View>
         <View style={styles.bottomContainer}>
           <Text style={{...styles.txtSmall, color: colors.textGreyLight}}>
