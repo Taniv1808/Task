@@ -1,4 +1,3 @@
-// import validator from 'is_js';
 import validator from 'is_js'
 
 const checkEmpty = (val, key) => {

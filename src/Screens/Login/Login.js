@@ -5,29 +5,12 @@ import WrapperContainer from '../../Components/WrapperContainer';
 import strings from '../../constants/lang';
 import styles from './styles';
 import navigationStrings from '../../constants/navigationStrings';
-import api from '../../apis'
+import validation from '../../utils/validation';
 
 export default function OtpVerification({navigation}) {
-  this.state={
-    email:'',
-    password:'',
-}
   const onLogin = () => {
-    navigation.navigate(navigationStrings.OTP_VERIFICATION);
+    navigation.navigate(navigationStrings.HOME);
   };
-  isValidData = () => {
-    let {email, password} = this.state;
-   const error = Validation({ email: email, password: password});
-   if (error) {
-     showMessage({
-       type: 'danger',
-       icon: 'danger',
-       message: error,
-     });
-     return false;
-   }
-   return true;
- };
  
   return (
     <WrapperContainer>
@@ -48,7 +31,7 @@ export default function OtpVerification({navigation}) {
         <TextInput placeholder="Enter your email"style={{borderWidth:0.2,marginTop:10}} />
 
         <Button
-          onPress={this.isValidData()}
+          onPress={onLogin}
           title='LOGIN ACCOUNT'
           style={{marginTop:20}}
         />

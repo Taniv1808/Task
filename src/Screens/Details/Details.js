@@ -95,17 +95,9 @@ export default class Detail extends Component {
         </ScrollView>
 
         <View style={styles.bottom1}>
-         <Image 
-            source={imagePath.whatsapp}
-            style={styles.whatsapp1}
-          />
-          <Image 
-            source={imagePath.wishlist}
-            style={styles.wishlist2}
-          />
           <TouchableOpacity
             style={styles.detailBack}
-            onPress={()=>{navigation.navigate(navigationStrings.HOMEPAGE,{screen: navigationStrings.HOMEPAGE,params:{product:item},
+            onPress={()=>{navigation.navigate(navigationStrings.HOME,{screen: navigationStrings.HOME,params:{product:item},
             })}}>
             <Text
               style={styles.detailCart}
