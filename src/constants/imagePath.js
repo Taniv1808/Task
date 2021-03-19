@@ -7,6 +7,9 @@ export default {
   back: require('../assets/images/ic_back.png'),
   backWithSquare: require('../assets/images/backWithSquare.png'),
   rightBlue: require('../assets/images/ic_goA.png'),
-  
+  map:require('../assets/images/map.png'),
+  search:require('../assets/images/search.png'),
+  logo:require('../assets/images/logo.png'),
+  cart:require('../assets/images/cart.png')
 
 };

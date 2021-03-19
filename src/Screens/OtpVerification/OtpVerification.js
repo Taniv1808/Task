@@ -62,6 +62,8 @@ export default function OtpVerification({navigation}) {
   const onVerifyOtp = () => {
     const {otp} = state;
     alert(otp);
+    navigation.navigate(navigationStrings.HOME);
+
   };
 
   const {timer} = state;

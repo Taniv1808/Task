@@ -8,8 +8,6 @@ import {
   moderateScaleVertical,
 } from '../../styles/responsiveSize';
 import styles from './styles';
-import PhoneNumberInput from '../../Components/PhoneNumberInput';
-import BorderTextInput from '../../Components/BorderTextInput';
 import GradientButton from '../../Components/GradientButton';
 import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
