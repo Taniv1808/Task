@@ -8,12 +8,15 @@ import MainStack from './MainStack';
 
 const Stack = createStackNavigator();
 
-export default function Routes() {
-  const userData = useSelector(state => state.auth.userData);
+export default function Routes(props) {
+  const{isLogged}=props
+  console.log(isLogged,"routes")
   return (
     <NavigationContainer>
-      <Stack.Navigator>{AuthStack(Stack)}
-      {MainStack(Stack)}</Stack.Navigator>
+      <Stack.Navigator>
+        {!isLogged && AuthStack(Stack)}
+        {MainStack(Stack)}  
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

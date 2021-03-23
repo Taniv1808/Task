@@ -14,5 +14,7 @@ export default {
   SUPERMARKET: 'supermarket',
   SUPERMARKET_PRODUCTS_CATEGORY: 'supermarketProductsCategory',
   PRODUCT_LIST: 'productList',
-  DETAIL:'detail'
+  DETAIL:'detail',
+  CART:'cart',
+  LIST:'list'
 };

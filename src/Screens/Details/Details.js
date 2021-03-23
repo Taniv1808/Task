@@ -23,12 +23,12 @@ export default class Detail extends Component {
         <ScrollView>
           <Image 
             style={styles.detailImage}
-            source={{ uri: item.img }}
+            source={{ uri: item.img1 }}
           />
           <Text
             style={styles.name1}
           >
-            {item.name}
+            {/* {item.name} */}
           </Text>
           <View style={styles.priceView}>
           <Text style={{marginTop:-80,fontSize:25,marginLeft:30}}>Rs.{item.price}</Text>

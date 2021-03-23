@@ -1,47 +1,39 @@
 
-import React, { useEffect } from 'react';
-// import SplashScreen from 'react-native-splash-screen'
+import React,{Component}from 'react';
 import { Provider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import FlashMessage from 'react-native-flash-message';
 import Routes from './src/Navigation/Routes';
 import store from './src/redux/store';
 import { getUserData } from './src/utils/utils';
-import types from './src/redux/types';
 
+export default class App extends Component{
+  constructor(props){
+    super(props)
+    this.state={
+      isLogged:false
+    }
+  }
 
-const App = () => {
-  useEffect(() => {
-    (async () => {
-      const userData = await getUserData();
-      console.log("user data", userData)
-      const { dispatch } = store;
-      if (userData && !!userData.token) {
-        console.log("enter")
-        dispatch({
-          type: types.LOGIN,
-          payload: userData,
-        });
-
+  componentDidMount=()=>{
+    getUserData().
+    then(res=>{
+      if(res){
+        this.setState({
+          isLogged:true
+        })
       }
-      // setTimeout(()=>{
-      //   SplashScreen.hide();
-      // },600)
-      
-    })();
-
-    return () => { };
-  }, []);
-
-  return (
+    })
+  }
+  render(){
+    const{isLogged}=this.state
+  return(
     <SafeAreaProvider>
-      <Provider store={store}>
-        <Routes />
-      </Provider>
-      <FlashMessage position="top" />
+    <Provider store={store}>
+    <Routes isLogged={isLogged}/>
+    <FlashMessage position='top'/>
+    </Provider>
     </SafeAreaProvider>
-  );
-};
-
-
-export default App;
+  )
+}
+}
