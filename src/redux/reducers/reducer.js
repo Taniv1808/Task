@@ -1,9 +1,8 @@
 import types from "../types"
-
-
+ 
 const initialState={
     list:[],
-count: 0,
+    count: 0,
 }
 
 export default function reducer(state = initialState, action) {
@@ -27,15 +26,13 @@ export default function reducer(state = initialState, action) {
             }
         }
        case types.EDIT:{
-        
            let newList=[...list]
            newList[id].num+=1
         return{
             ...state,
             list:newList,
             count:count+1
-        }
-       
+        }  
        }
         default :
         return{

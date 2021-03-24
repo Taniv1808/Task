@@ -12,8 +12,7 @@ export function  deleteItem(index) {
     return{
         type:types.DELETE,
         payload:index
-    }
-    
+    } 
 }
 
 export function editItem (index) {

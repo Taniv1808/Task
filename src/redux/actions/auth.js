@@ -3,8 +3,12 @@ import {setUserData, apiPost, apiGet, clearUserData} from '../../utils/utils';
 import types from '../types';
 import {
   LOGIN_API,
+  OTPVERIFICATION_API,
+  PHONE_API,
   SIGNUP_API
 } from '../../config/urls.js';
+
+
 const {dispatch} = store;
 
 const saveUserData = (data) => {
@@ -63,6 +67,33 @@ export const signUp = (data) => {
       });
   });
 };
+
+
+
+
+export const loginUsingPhone=(data)=>{
+  return new Promise((resolve, reject)=>{
+    apiPost(PHONE_API, data).then((res)=>{
+
+      saveUserData(data);
+      setUserData(data);
+       resolve(res)
+    }).catch((error)=>{
+      reject(error)
+    })
+  })
+}
+
+
+export const _OtpVerification=(data)=>{
+  return new Promise((resolve, reject)=>{
+    apiPost(OTPVERIFICATION_API, data).then((res)=>{
+      resolve(res);
+    }).catch((error)=>{
+      reject(error)
+    })
+  })
+}
 
 
 export const getViewData = (data) => {

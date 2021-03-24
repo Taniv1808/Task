@@ -1,6 +1,6 @@
 export default {
   LOGIN: 'login',
-  OTP_VERIFICATION: 'otpVerfication',
+  OTP_VERIFICATION: 'otpVerification',
   OUTER_SCREEN: 'outerScreen',
   SIGN_UP: 'signUp',
   HOME: 'home',

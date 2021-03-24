@@ -20,8 +20,10 @@ import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
 import imagePath from '../../constants/imagePath';
 import navigationStrings from '../../constants/navigationStrings';
-const CELL_COUNT = 4;
-export default function OtpVerification({navigation}) {
+import { _OtpVerification } from '../../redux/actions/auth';
+import { cos } from 'react-native-reanimated';
+const CELL_COUNT = 5;
+export default function OtpVerifications({navigation,route}) {
   const [state, setState] = useState({
     timer: 100,
     otp: '',
@@ -58,9 +60,17 @@ export default function OtpVerification({navigation}) {
   });
 
   const onVerifyOtp = () => {
-    const {otp} = state;
-    alert(otp);
-    navigation.navigate(navigationStrings.HOME);
+    _OtpVerification({
+      "userId": route.params.data,
+    "otp" : "12345",
+    "deviceToken":"123",
+    "registerFrom" : "ANDROID"
+}).then((res)=>{
+  console.log(res)
+  navigation.navigate(navigationStrings.HOME)
+}).catch((error)=>{
+  console.log(error)
+})
 
   };
 
@@ -78,11 +88,11 @@ export default function OtpVerification({navigation}) {
         style={{
           flex: 1,
           marginTop: moderateScaleVertical(88),
-          marginHorizontal: moderateScale(24),
+          marginHorizontal: moderateScale(0),
         }}>
         <Text style={styles.header}>{strings.OTP_VERIFICATION}</Text>
         <Text style={styles.txtSmall}>{strings.ENTER_OTP_SENT}</Text>
-        <View style={{height: moderateScaleVertical(50)}} />
+        <View style={{height: moderateScaleVertical(40)}} />
         <CodeField
           ref={ref}
           {...propsOtp}
@@ -103,11 +113,9 @@ export default function OtpVerification({navigation}) {
             </Text>
           )}
         />
-        <GradientButton
-          onPress={onVerifyOtp}
-          containerStyle={{marginTop: moderateScaleVertical(10)}}
-          btnText={strings.VERIFY_ACCOUNT}
-        />
+        <TouchableOpacity onPress={onVerifyOtp} style={{borderWidth:0.2,width:220,marginLeft:80,backgroundColor:'#dcdcdc',height:30}}>
+          <Text style={{textAlign:'center',padding:6}}>VERIFY ACCOUNT</Text>
+        </TouchableOpacity>
         {timer > 0 ? (
           <View style={styles.bottomContainer}>
             <Text style={{...styles.txtSmall, color: colors.textGreyLight}}>
