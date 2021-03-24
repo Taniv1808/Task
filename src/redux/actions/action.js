@@ -1,3 +1,6 @@
+import { reject } from "lodash";
+import { INFINITE_SCROLL } from "../../config/urls";
+import { apiGet } from "../../utils/utils";
 import types from "../types";
 
 export function addToCart(value) {
@@ -20,4 +23,14 @@ export function editItem (index) {
         type:types.EDIT,
         payload:index
     }
+}
+
+export const infiniteScroll=(data)=>{
+    return new Promise((resolve,reject)=>{
+        apiGet(INFINITE_SCROLL,data).then((res)=>{
+            resolve(res)
+        }).catch((error)=>{
+                reject(error)
+        })
+    })
 }

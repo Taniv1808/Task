@@ -5,12 +5,12 @@ import navigationStrings from '../constants/navigationStrings';
 export default function (Stack) {
   return (
     <>
-  <Stack.Screen
+  {/* <Stack.Screen
     name={navigationStrings.SIGN_UP}
     component={Signup}
     options={{headerShown:false}}>
 
-  </Stack.Screen>
+  </Stack.Screen> */}
       <Stack.Screen
         name={navigationStrings.LOGIN}
         component={Login}

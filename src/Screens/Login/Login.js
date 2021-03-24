@@ -8,15 +8,15 @@ import validation from '../../utils/validation';
 import api from '../../apis';
 import {setUserData} from '../../utils/utils';
 import {showMessage} from 'react-native-flash-message';
-// import { OTPVERIFICATION_API } from '../../config/urls';
 import {loginUsingPhone} from '../../redux/actions/auth';
 import Loader from '../../Components/Loader';
 
 
 export default class Login extends Component {
   state = {
-    mobile: '',
     password: '',
+    mobile: '',
+    
     isLoading: false,
   };
 
@@ -30,7 +30,7 @@ export default class Login extends Component {
 
   isValidData = () => {
     let {mobile, password} = this.state;
-    const error = validation({phoneNumber: mobile, password: password});
+    const error = validation({ password: password,phoneNumber: mobile,});
     if (error) {
       showMessage({
         type: 'danger',
@@ -44,7 +44,7 @@ export default class Login extends Component {
 
   usingPhone = () => {
     let {mobile} = this.state;
-    if (this.isValidData) {
+    if (this.isValidData()) {
       loginUsingPhone({
         contactDetails: {
           phoneNo: mobile,
@@ -53,10 +53,12 @@ export default class Login extends Component {
         },
       })
         .then(res => {
+          isLoading=true,
           console.log(res);
           this.props.navigation.navigate(navigationStrings.OTP_VERIFICATION,{data:res.data.userId});
         })
         .catch(error => {
+          isLoading=false
           console.log(error);
         });
         this.setState({
@@ -93,7 +95,6 @@ export default class Login extends Component {
           <View style={{marginTop: 20}}>
             <Button onPress={this.usingPhone} title="LOGIN ACCOUNT" />
           </View>
-          <Loader isLoading={isLoading}/>
           <View style={{flexDirection: 'row', marginLeft: 80, marginTop: 40}}>
             <Text>New Customer?</Text>
             <TouchableOpacity
@@ -104,6 +105,7 @@ export default class Login extends Component {
             </TouchableOpacity>
           </View>
         </KeyboardAwareScrollView>
+        <Loader isLoading={isLoading}/>
       </WrapperContainer>
     );
   }

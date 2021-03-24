@@ -22,11 +22,14 @@ import imagePath from '../../constants/imagePath';
 import navigationStrings from '../../constants/navigationStrings';
 import { _OtpVerification } from '../../redux/actions/auth';
 import { cos } from 'react-native-reanimated';
+import Loader from '../../Components/Loader';
+Loader
 const CELL_COUNT = 5;
 export default function OtpVerifications({navigation,route}) {
   const [state, setState] = useState({
     timer: 100,
     otp: '',
+    isLoading:false
   });
 
   const updateState = data => setState(state => ({...state, ...data}));
@@ -60,21 +63,25 @@ export default function OtpVerifications({navigation,route}) {
   });
 
   const onVerifyOtp = () => {
+    let {isLoading}=state
     _OtpVerification({
       "userId": route.params.data,
     "otp" : "12345",
     "deviceToken":"123",
     "registerFrom" : "ANDROID"
 }).then((res)=>{
+  isLoading=true
   console.log(res)
   navigation.navigate(navigationStrings.HOME)
 }).catch((error)=>{
   console.log(error)
+  isLoading=false
 })
+updateState({isLoading:true})
 
   };
 
-  const {timer} = state;
+  const {timer,isLoading} = state;
   return (
     <WrapperContainer>
       <View style={styles.backContainer}>
@@ -113,7 +120,7 @@ export default function OtpVerifications({navigation,route}) {
             </Text>
           )}
         />
-        <TouchableOpacity onPress={onVerifyOtp} style={{borderWidth:0.2,width:220,marginLeft:80,backgroundColor:'#dcdcdc',height:30}}>
+        <TouchableOpacity onPress={onVerifyOtp} style={{borderWidth:0.2,width:220,marginLeft:80,height:30,borderRadius:27,backgroundColor:'#dcdcdc'}}>
           <Text style={{textAlign:'center',padding:6}}>VERIFY ACCOUNT</Text>
         </TouchableOpacity>
         {timer > 0 ? (
@@ -146,6 +153,7 @@ export default function OtpVerifications({navigation,route}) {
           </View>
         )}
       </View>
+      <Loader isLoading={isLoading}/>
     </WrapperContainer>
   );
 }

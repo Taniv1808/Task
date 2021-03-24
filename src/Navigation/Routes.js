@@ -22,7 +22,7 @@ function Routes(props) {
 }
 const mapStateToProps=state=>{
   return{
-    userData:state.reducer.userData
+    userData:state.auth.userData
   }
 }
 

@@ -9,3 +9,4 @@ export const SIGNUP_API = getApiUrl("/user/registerUser");
 
 export const PHONE_API =  'https://api.talktier.com/user/v1/loginSignupOtp';
 export const OTPVERIFICATION_API = 'https://api.talktier.com/user/v1/verifyOtp';
+export const INFINITE_SCROLL='https://api.talktier.com/user/v1/getUserSearch'

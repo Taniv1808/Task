@@ -25,11 +25,10 @@ export default class App extends Component{
     })
   }
   render(){
-    const{isLogged}=this.state
   return(
     <SafeAreaProvider>
     <Provider store={store}>
-    <Routes isLogged={isLogged}/>
+    <Routes/>
     <FlashMessage position='top'/>
     </Provider>
     </SafeAreaProvider>

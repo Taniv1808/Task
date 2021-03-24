@@ -10,7 +10,7 @@ export default function (Stack) {
     <>
       <Stack.Screen
         name={navigationStrings.HOME}
-        component={Home}
+        component={BottomTabNavigator}
         options={{headerShown: false}}
       />
       <Stack.Screen

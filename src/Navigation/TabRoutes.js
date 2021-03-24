@@ -4,7 +4,6 @@ import navigationStrings from '../constants/navigationStrings'
 import { Cart, Home } from '../Screens'
 
 
-
 const Tab=createBottomTabNavigator()
 
 export default function BottomTabNavigator() {
@@ -22,13 +21,13 @@ export default function BottomTabNavigator() {
           tabBarLabel: 'Homepage'
         }}
           />
-              <Tab.Screen>
+              <Tab.Screen
               name={navigationStrings.CART}
               component={Cart}
               options={{
           tabBarLabel: 'Cart'
         }}
-              </Tab.Screen>
+              />
 
         </Tab.Navigator>
     )

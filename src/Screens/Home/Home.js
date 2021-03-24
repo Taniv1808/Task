@@ -6,7 +6,7 @@ import Cart from '../../Components/Cart'
 import Decathlon from '../../Components/Decathlon'
 import Hoarding from '../../Components/Hoarding'
 import Terms from '../../Components/Terms'
-import { addToCart,add } from '../../redux/actions/action'
+import { addToCart} from '../../redux/actions/action'
 
 class Home extends Component{
     constructor(props){
@@ -16,17 +16,18 @@ class Home extends Component{
                 id:1,
                 img1:'https://www.shopperwear.com/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/p/l/plus-size-clothing-men-shirts-long-sleeve-2017-new-spring-solid-color-slim-fit-shirt-cotton-casual-shirt-men-clothes-extra-image-4.jpg',
                 price:5600,
-                name:'Tommy'
+                name:'Tommy',
+                num:1
             },
             {
         id:2,
     img1:'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/2104/9881/New-Autumn-Fashion-Brand-Men-Clothes-Slim-Fit-Men-Long-Sleeve-Shirt-Men-Plaid-Cotton-Casual__15044.1569933891.jpg?c=2',
     price:1500,
-    name:'Tommy'
+    name:'Tommy',
+    num:1
 }]        
     }
-}
-// cartlist >> filter  
+}  
     render(){
         const{img}=this.state
         console.log(this.props)
