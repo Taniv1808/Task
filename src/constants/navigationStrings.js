@@ -16,5 +16,6 @@ export default {
   PRODUCT_LIST: 'productList',
   DETAIL:'detail',
   CART:'cart',
-  LIST:'list'
+  LIST:'list',
+  PROFILE:'profile'
 };

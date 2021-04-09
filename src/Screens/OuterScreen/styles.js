@@ -57,7 +57,7 @@ export default StyleSheet.create({
     marginHorizontal: moderateScale(16),
   },
   alreadyText:{
-    color: colors.textGreyLight,
+    color:'#dcdcdc',
     marginTop: 0,
   },
   login:{

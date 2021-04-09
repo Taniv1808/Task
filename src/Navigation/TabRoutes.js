@@ -1,7 +1,7 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import navigationStrings from '../constants/navigationStrings'
-import { Cart, Home } from '../Screens'
+import { Cart, Home, Profile } from '../Screens'
 
 
 const Tab=createBottomTabNavigator()
@@ -25,7 +25,15 @@ export default function BottomTabNavigator() {
               name={navigationStrings.CART}
               component={Cart}
               options={{
-          tabBarLabel: 'Cart'
+          tabBarLabel: 'Explore'
+        }}
+              />
+
+            <Tab.Screen
+              name={navigationStrings.PROFILE}
+              component={Profile}
+              options={{
+          tabBarLabel: 'Profile'
         }}
               />
 

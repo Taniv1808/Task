@@ -3,7 +3,9 @@ import { View, Text, Image ,StyleSheet } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import imagePath from "../../constants/imagePath";
 import navigationStrings from "../../constants/navigationStrings";
+import colors from "../../styles/colors";
 navigationStrings
+colors
 
 export default class Detail extends Component {
   render() {
@@ -115,7 +117,7 @@ export default class Detail extends Component {
 // detail stylesheet
 const styles=StyleSheet.create({
     main:{
-       flex: 1
+       flex: 1,
       },
     back:{
       marginBottom:8

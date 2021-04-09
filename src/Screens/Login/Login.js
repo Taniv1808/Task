@@ -11,12 +11,10 @@ import {showMessage} from 'react-native-flash-message';
 import {loginUsingPhone} from '../../redux/actions/auth';
 import Loader from '../../Components/Loader';
 
-
 export default class Login extends Component {
   state = {
     password: '',
     mobile: '',
-    
     isLoading: false,
   };
 

@@ -1,6 +1,5 @@
-import { reject } from "lodash";
-import { INFINITE_SCROLL } from "../../config/urls";
-import { apiGet } from "../../utils/utils";
+import { SCROLL_API } from "../../config/urls";
+import { apiGet, apiPost } from "../../utils/utils";
 import types from "../types";
 
 export function addToCart(value) {
@@ -13,6 +12,7 @@ export function addToCart(value) {
 
 export function  deleteItem(index) {
     return{
+        
         type:types.DELETE,
         payload:index
     } 
@@ -25,9 +25,9 @@ export function editItem (index) {
     }
 }
 
-export const infiniteScroll=(data)=>{
+export const scrollAPI=(data)=>{
     return new Promise((resolve,reject)=>{
-        apiGet(INFINITE_SCROLL,data).then((res)=>{
+        apiPost(SCROLL_API,data).then((res)=>{
             resolve(res)
         }).catch((error)=>{
                 reject(error)

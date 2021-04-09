@@ -1,31 +1,41 @@
 import React, { Component } from "react";
-import { Text, View }
- from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { Text, View ,FlatList}from "react-native";
+import Cart2 from "../../Components/Cart2";
+import { scrollAPI } from "../../redux/actions/action";
  export default class Cart extends Component {
-    //  constructor(props){
-    //      super(props)
-    //      this.state={
-    //          data:[]
-    //      }
-    //  }
-    //  componentDidMount(){
-    //      this.apiCall()
-    //  }
-    //  async apiCall(){
-    //      let resp = await fetch('https://api.talktier.com/user/v1/getUserSearch')
-    //      let respJSON= await resp.json()
-    //      console.warn(respJSON)
-    //      this.setState({data:respJSON.age})
-    //  }
+     state={
+        data:[],
+         limit:10,
+         skip:0,
+     }
+     infiniteAPI=()=>{
+        const{limit,skip}=this.state
+        scrollAPI({
+            "searchType":"LEADERBOARD", "limit":`${limit}`, "skip":`${skip}`
+        }).then((res)=>{
+            this.setState({data:res.data})
+            console.log(res)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }
+
+    componentDidMount=()=>{
+        this.infiniteAPI();
+    }
+
      render(){
+         let {data} = this.state
      return(
          <View>
-             <Text>
-                API CALL
-             </Text>
-             {/* <FlatList data={this.state.data}
-             renderItem={({item})=>{item.age}}/> */}
+            <FlatList
+            data={data}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={({item})=>item.id}
+            ItemSeparatorComponent={()=>(
+                <View style={{marginBottom:10}}></View>)}
+                renderItem={({item})=><Cart2 data={item}/>}
+                />
          </View> 
      )
      

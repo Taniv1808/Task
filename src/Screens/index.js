@@ -4,5 +4,6 @@ export {default as OtpVerifications} from './OtpVerification/OtpVerifications';
 export {default as OuterScreen} from './OuterScreen/OuterScreen';
 export {default as Home} from './Home/Home';
 export {default as Detail} from './Details/Details';
-export {default as Cart} from './Cart/Cart'
-export {default as List} from './List/List'
+export {default as Cart} from './Cart/Cart';
+export {default as List} from './List/List';
+export {default as Profile} from './Profile/Profile'

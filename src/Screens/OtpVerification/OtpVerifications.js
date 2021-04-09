@@ -129,7 +129,7 @@ updateState({isLoading:true})
               {strings.RESEND_CODE_IN}
               <Text
                 style={{
-                  color: colors.themeColor,
+                  color:'red',
                   fontFamily: fontFamily.futuraBtHeavy,
                 }}>
                 {`${otpTimerCounter(timer)} min`}
@@ -143,7 +143,7 @@ updateState({isLoading:true})
               <Text
                 onPress={_onResend}
                 style={{
-                  color: colors.themeColor,
+                  color: 'red',
                   fontFamily: fontFamily.futuraBtHeavy,
                 }}>
                 {' '}

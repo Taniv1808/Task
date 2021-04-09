@@ -1,6 +1,5 @@
-// import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Detail, Cart, Home, List} from '../Screens';
+import { Detail, Cart, List, Profile} from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
 import BottomTabNavigator from './TabRoutes';
 
@@ -28,6 +27,13 @@ export default function (Stack) {
       component={List}
       options={{headerShown:false}}>
         
+      </Stack.Screen>
+
+      <Stack.Screen
+      name={navigationStrings.PROFILE}
+      component={Profile}
+      options={{headerShown:false}}>
+
       </Stack.Screen>
   
 

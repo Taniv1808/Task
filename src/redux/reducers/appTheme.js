@@ -10,7 +10,7 @@ const initial_state = {
     textGreyLight: '#8F92A1',
     bottomBarGradientA: 'rgba(50,181,252,1)',
     bottomBarGradientB: 'rgba(97,160,242,1)',
-    backgroundGrey: '#F4F7FA',
+    backgroundGrey: '#F4F7F',
     currencyRed:"#F44746"
   },
   themeLayouts: {},
@@ -23,10 +23,6 @@ export default function (state = initial_state, action) {
       return {userData: data};
     }
 
-    case types.NO_INTERNET: {
-      const internetConnection = action.payload.internetConnection;
-      return {...state, internetConnection};
-    }
 
     default: {
       return {...state};

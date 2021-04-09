@@ -8,7 +8,6 @@ import {
   SIGNUP_API
 } from '../../config/urls.js';
 
-
 const {dispatch} = store;
 
 const saveUserData = (data) => {
@@ -24,10 +23,6 @@ const saveViewData = (data) => {
     payload: data,
   });
 };
-// export function login(data) {
-//   saveUserData(data);
-//   // setUserData(data)
-// }
 
 export const updateInternetConnection = (data) => {
   dispatch({
@@ -88,6 +83,7 @@ export const loginUsingPhone=(data)=>{
 export const _OtpVerification=(data)=>{
   return new Promise((resolve, reject)=>{
     apiPost(OTPVERIFICATION_API, data).then((res)=>{
+      saveUserData(res.data);
       resolve(res);
     }).catch((error)=>{
       reject(error)
@@ -101,7 +97,7 @@ export const getViewData = (data) => {
   return new Promise((resolve, reject) => {
     apiPost(VIEW_DATA)
       .then((res) => {
-        console.log(res, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@-------');
+        console.log(res);
         saveViewData(res.data);
         resolve(res);
       })

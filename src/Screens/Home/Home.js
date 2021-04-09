@@ -21,7 +21,7 @@ class Home extends Component{
             },
             {
         id:2,
-    img1:'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/2104/9881/New-Autumn-Fashion-Brand-Men-Clothes-Slim-Fit-Men-Long-Sleeve-Shirt-Men-Plaid-Cotton-Casual__15044.1569933891.jpg?c=2',
+    img1:'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/productimage/2020/1/17/d71045b2-4300-4395-b110-f652fa00e9e51579211471795-1.jpg',
     price:1500,
     name:'Tommy',
     num:1
